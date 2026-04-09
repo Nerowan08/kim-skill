@@ -1,3 +1,4 @@
+![Kim](image.png)
 # 🇰🇵金正恩Skill
 
 ## 🌟 为什么做这个？
