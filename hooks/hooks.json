@@ -1,0 +1,7 @@
+{
+  "session_start": {
+    "posix": "./hooks/session-start",
+    "windows": "./hooks/session-start.ps1",
+    "description": "Inject arming-command skill at session start"
+  }
+}
