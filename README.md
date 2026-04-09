@@ -125,7 +125,7 @@
 4. 需要人工触发时，用 `commands/*.md`
 5. 需要子代理时，用 `agents/*.md`
 
-## 3 分钟安装
+## 安装
 
 ### 方式 A：作为通用 Markdown skill 使用
 
