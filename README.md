@@ -168,6 +168,7 @@
 ```bash
 git clone https://github.com/Nerowan08/kim-skill.git
 cd kim-skill
+```
 
 把下面这些路径接入你的 agent 环境：
 
