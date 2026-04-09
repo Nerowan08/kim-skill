@@ -1,0 +1,11 @@
+{
+  "name": "kim-command-skill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "High-concentration execution skill scaffold for AI workflows.",
+  "license": "MIT",
+  "scripts": {
+    "validate": "bash tests/validate.sh",
+    "validate:win": "powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File tests/validate.ps1"
+  }
+}
