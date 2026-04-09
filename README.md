@@ -1,5 +1,8 @@
-![Kim](image.png)
-# 🇰🇵金正恩Skill
+<p align="center">
+  <img src="image.png" alt="Kim">
+</p>
+
+<h1 align="center">🇰🇵金正恩Skill</h1>
 
 ## 🌟 为什么做这个？
 
