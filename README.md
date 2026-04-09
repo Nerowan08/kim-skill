@@ -22,240 +22,187 @@
 - **高频检阅**：用短周期纠偏，而不是等最后统一结算
 - **战果先行**：优先拿出可展示、可验证、可汇报的成果点
 
----
+## Skill 卡片
 
-## 🏗️ 方法结构
+| 字段 | 内容 |
+|---|---|
+| 类型 | execution doctrine / session control |
+| 目标 | 让 AI 在高压、低资源、强交付场景里更稳地推进任务 |
+| 风格 | 集中、克制、命令化、闭环化 |
+| 最适合 | deadline 临近、反馈混乱、依赖掉线、多任务抢资源、需要尽快出样品 |
+| 不适合 | 无约束发散、纯文学创作、只求灵感不求落地的场景 |
+| 会话入口 | `skills/arming-command/SKILL.md` |
 
-### ☀️ 总原则 —— 任务绝对化
+## 会话加载后，AI 会发生什么变化
 
-AI 在开始前先回答一个问题：
+| 加载前 | 加载后 |
+|---|---|
+| 喜欢同时讨论很多方向 | 先收束成一个最高任务 |
+| 容易等待“条件齐全” | 默认条件不会齐，先设计降级路径 |
+| 输出偏解释和讨论 | 输出偏命令、偏动作、偏交付 |
+| 喜欢大包大揽 | 先拿最小可运行结果 |
+| 等到最后统一检查 | 每轮都留检阅点和证据 |
 
-**“当前唯一不能失败的任务是什么？”**
+## 指挥法则
 
-所有判断、工具调用、上下文窗口、时间预算，都优先服从这个任务。
+### 法则 01：最高任务先行
+每次开始前都先写出一句话：**当前唯一不能失败的结果是什么。**
 
----
+### 法则 02：主线压倒支线
+一切不直接贡献最高任务的工作，要么排队，要么冻结，不再和主线抢注意力。
 
-### ⚙️ 第一层·组织哲学
+### 法则 03：内生保供优先
+把外部工具、网络、数据源、第三方响应，统统视为可能失效。优先准备本地替代、手工兜底和降级交付。
 
-#### 👑 单核指挥
-只保留一个主目标、一个当前版本、一个对外结论。
+### 法则 04：命令必须可执行
+不要输出“可以进一步优化”“建议持续关注”这种漂浮句。动作必须能回答四件事：谁做、做什么、做到哪里、先后顺序是什么。
 
-#### 🧱 自力更生
-默认外部依赖会迟到、失效或不可用；优先建设本地替代方案、降级路径、手工兜底方式。
+### 法则 05：每轮都要留证
+每次推进都要产出一个可以被核对的东西：一份清单、一段可运行代码、一个被验证的结论、一版 demo、一份可汇报摘要。
 
-#### 🌪️ 常态危机
-把“资源稀缺、时间紧、信息不全”视为常态，流程为坏条件而设计。
+### 法则 06：反馈只进闭环
+不是所有反馈都值得改变方向。只保留会修改优先级、范围、结论或交付标准的反馈，其余归为噪音。
 
----
+## 触发面板
 
-### 🛠️ 第二层·工作方法
-
-#### 📜 指令级拆解
-把模糊讨论压缩成可执行命令：谁做、做什么、做到什么程度、先后顺序如何。
-
-#### 🧪 高频检阅
-用短周期检查目标偏差、资源偏差、质量偏差，而不是等到最后才检查。
-
-#### 🔒 反馈封闭
-只保留能改变决策的反馈；把噪音挡在系统外，把决策反馈拉进闭环。
-
----
-
-### 🎖️ 第三层·行动战术
-
-#### 🎯 资源锁仓
-把最强工具、最大上下文、最高推理预算集中给主任务。
-
-#### 🛖 最小生存栈
-先搭出能运行、能证明、能续命的最小系统，而不是一开始追求完整体系。
-
-#### 🚩 象征成果先行
-优先制造一个清晰、可见、可汇报、可验证的成果点，用它稳住节奏、统一预期。
-
----
-
-## 🗡️ 九大执行武器
-
-| 执行武器 | 核心要义 | 适用场景 |
+| 现场信号 | 先装载的 skill | 作用 |
 |---|---|---|
-| 👑 单核指挥 | 一个中心、一个版本、一个当前结论 | 需求混乱、多人协作 |
-| 🧱 自力更生 | 默认依赖失效，先保内生能力 | 工具受限、环境不稳 |
-| 🌪️ 常态危机 | 为最坏条件设计流程 | 高压交付、信息不全 |
-| 📜 指令级拆解 | 把讨论变成动作命令 | 拖延、任务过大 |
-| 🧪 高频检阅 | 短周期纠偏，不等最后 | 长任务、易返工工作 |
-| 🔒 反馈封闭 | 过滤噪音，只留决策反馈 | 意见过载、需求摇摆 |
-| 🎯 资源锁仓 | 核心资源只服务主任务 | 多任务竞争 |
-| 🛖 最小生存栈 | 先做最小可运行系统 | 从零启动、原型期 |
-| 🚩 象征成果先行 | 先打可见战果 | 需要汇报、稳预期 |
+| 目标太多，大家都说自己最重要 | `single-core-command` | 收束唯一主任务 |
+| 工具不稳、资料不齐、依赖可能失效 | `self-reliance-stack` | 建降级路径和替代方案 |
+| 时间被压缩到只够打一场短仗 | `crisis-mode-design` | 用坏条件反推流程 |
+| 任务说得很大，但没有下一步 | `instruction-decomposition` | 把讨论改写成命令链 |
+| 项目越做越偏，返工越来越多 | `high-frequency-review` | 用短周期检阅纠偏 |
+| 不同人都在提意见，方向反复摇摆 | `closed-loop-feedback` | 建立反馈过滤和闭环 |
+| 多个任务同时争抢上下文和预算 | `resource-lockdown` | 把核心资源锁给主线 |
+| 现在什么都没有，但必须马上起跑 | `minimum-survival-stack` | 先搭最小可运行链路 |
+| 需要尽快向外界证明“项目在动” | `symbolic-breakthrough` | 先打出可见战果 |
 
----
+## 输出协议
 
-## 📦 安装
+加载这个 skill 体系后，建议 AI 默认按下面的骨架回应复杂任务：
 
-### 系统要求
+```md
+[最高任务]
+用一句话写出本轮唯一不能失败的结果
 
-任何支持 Markdown skill / system prompt 注入的 AI 工具都可以使用：
+[当前态势]
+现在有哪些阻塞、依赖、风险、截止压力
 
-- Claude Code
-- Cursor
-- Codex
-- OpenCode
-- 其他支持按需加载 Markdown skill 的 Agent 平台
+[命令链]
+1. 先做什么
+2. 再做什么
+3. 做到什么程度算完成
 
-### 方式一：本地仓库安装
+[本轮证据]
+本轮必须交出什么可核对成果
+
+[风险与降级]
+如果关键条件失效，改走哪条降级路径
+
+[下一检阅点]
+下一轮重点检查什么
+```
+
+## Skill 注册表
+
+### `arming-command`
+会话入口。先判断要不要进入强执行模式，再路由到最少必要 skill。
+
+### `command-core`
+总控手册。定义这套体系的基本动作、禁止动作和默认输出。
+
+### `single-core-command`
+处理“目标泛滥”。把复杂局面压缩成唯一主任务与唯一口径。
+
+### `self-reliance-stack`
+处理“依赖焦虑”。先设计没有外援也能推进的最小路径。
+
+### `crisis-mode-design`
+处理“坏条件常态化”。从资源不足、时间不足、信息不足出发来设计流程。
+
+### `instruction-decomposition`
+处理“只会讨论，不会动手”。把模糊工作转成命令链。
+
+### `high-frequency-review`
+处理“长任务偏航”。让项目每几步就被检查一次，而不是最后统一翻车。
+
+### `closed-loop-feedback`
+处理“意见过载”。把反馈变成可判定、可归档、可闭环的输入。
+
+### `resource-lockdown`
+处理“核心资源被稀释”。把模型预算、上下文、工具优先级锁给最高任务。
+
+### `minimum-survival-stack`
+处理“从零开局”。先跑通一条最短交付链，而不是一开始就造完整系统。
+
+### `symbolic-breakthrough`
+处理“项目需要信号”。优先做出一个能展示、能汇报、能争取资源的突破点。
+
+### `workflows`
+跨 skill 编排层。把多种 skill 串成任务剧本。
+
+## 现成战术包
+
+| 战术包 | 调用顺序 | 适用情况 |
+|---|---|---|
+| Deadline Strike | `single-core-command -> resource-lockdown -> instruction-decomposition -> high-frequency-review` | 今天必须交，范围已知 |
+| Dependency Blackout | `self-reliance-stack -> minimum-survival-stack -> crisis-mode-design` | 依赖失效、外援不可靠 |
+| Zero-to-One Push | `minimum-survival-stack -> symbolic-breakthrough -> high-frequency-review` | 需要先做出第一版 |
+| Noisy Steering Room | `single-core-command -> closed-loop-feedback -> instruction-decomposition` | 反馈很多、结论反复变 |
+| Demo First | `symbolic-breakthrough -> resource-lockdown -> high-frequency-review` | 需要先做一版能展示的成果 |
+
+## 装载路径
+
+推荐的装载顺序不是“全部一起塞进 prompt”，而是：
+
+1. 会话开始先装 `skills/arming-command/SKILL.md`
+2. 判断当前现场信号，最多挑 1–2 个场景 skill
+3. 复杂任务再补 `skills/command-core/SKILL.md`
+4. 需要人工触发时，用 `commands/*.md`
+5. 需要子代理时，用 `agents/*.md`
+
+## 3 分钟安装
+
+### 方式 A：作为通用 Markdown skill 使用
 
 ```bash
 git clone <your-repo-url>/kim-command-skill
 cd kim-command-skill
 ```
 
-然后接入以下目录：
+把下面这些路径接入你的 agent 环境：
 
-- `skills/arming-command/SKILL.md`：会话级入口 skill
-- `skills/*/SKILL.md`：各具体方法 skill
-- `commands/`：手动命令入口
-- `agents/`：子代理提示词
-- `hooks/`：会话注入脚本
+- 会话入口：`skills/arming-command/SKILL.md`
+- 总控规则：`skills/command-core/SKILL.md`
+- 手动入口：`commands/`
+- 子代理：`agents/`
+- hook：`hooks/`
 
-### 方式二：直接贴给 AI agent 使用
+### 方式 B：直接贴给支持 system prompt 的 AI 工具
 
-把 `skills/arming-command/SKILL.md` 作为 system prompt 的一部分注入；
-需要时再按任务场景加载对应 `skills/*/SKILL.md`。
+把 `skills/arming-command/SKILL.md` 放进系统提示；只有在任务触发对应信号时，再按需追加具体 skill 文档。
 
----
+### 安装后自检
 
-## 🚀 使用方式
+```bash
+bash tests/validate.sh
+# Windows
+powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File tests/validate.ps1
+```
 
-会话开始时先加载 `skills/arming-command/SKILL.md`，它会：
-
-1. 先以“任务绝对化”约束判断
-2. 再判断当前最值得调用的 skill
-3. 尽量少而准地加载方法，而不是机械全调用
-4. 在高压、低资源、反馈嘈杂时优先切换到强执行模式
-
-### 手动命令入口
-
-- `/single-core-command` —— 👑 单核指挥
-- `/self-reliance-stack` —— 🧱 自力更生
-- `/crisis-mode-design` —— 🌪️ 常态危机
-- `/instruction-decomposition` —— 📜 指令级拆解
-- `/high-frequency-review` —— 🧪 高频检阅
-- `/closed-loop-feedback` —— 🔒 反馈封闭
-- `/resource-lockdown` —— 🎯 资源锁仓
-- `/minimum-survival-stack` —— 🛖 最小生存栈
-- `/symbolic-breakthrough` —— 🚩 象征成果先行
-- `/workflows` —— 🔗 工作流组合
-
----
-
-## 🔄 典型工作流
-
-### 工作流 A：高压交付
-`单核指挥 → 资源锁仓 → 指令级拆解 → 高频检阅`
-
-适用：今天必须交、不能失败、范围已经确定的任务。
-
-### 工作流 B：从零起步
-`自力更生 → 最小生存栈 → 象征成果先行 → 高频检阅`
-
-适用：没有完整条件、需要先做出可运行版本的任务。
-
-### 工作流 C：需求混乱治理
-`单核指挥 → 反馈封闭 → 指令级拆解 → 象征成果先行`
-
-适用：反馈太多、版本太乱、难以统一方向的任务。
-
----
-
-## 📚 支撑文件
-
-### 🤖 Subagent Prompts
-
-- `agents/war-room-director.md` —— 主任务指挥官
-- `agents/self-reliance-builder.md` —— 本地替代方案构建 agent
-- `agents/inspection-officer.md` —— 高频检阅 agent
-
-### 🗺️ Reference Guides
-
-- `docs/priority-ladder.md` —— 优先级阶梯模板
-- `docs/dependency-failure-playbook.md` —— 依赖失效应对手册
-- `docs/minimum-survival-checklist.md` —— 最小生存栈检查单
-- `docs/visible-win-patterns.md` —— 可展示成果模式库
-- `docs/platforms.md` —— 平台安装与验证说明
-
----
-
-## 🗂️ 项目结构
+## 目录导览
 
 ```text
 kim-command-skill/
-├── .claude-plugin/plugin.json
-├── .codex/INSTALL.md
-├── .cursor-plugin/plugin.json
-├── .opencode/INSTALL.md
-├── agents/
-│   ├── war-room-director.md
-│   ├── self-reliance-builder.md
-│   └── inspection-officer.md
-├── assets/
-│   └── skill-map.md
-├── commands/
-│   ├── single-core-command.md
-│   ├── self-reliance-stack.md
-│   ├── crisis-mode-design.md
-│   ├── instruction-decomposition.md
-│   ├── high-frequency-review.md
-│   ├── closed-loop-feedback.md
-│   ├── resource-lockdown.md
-│   ├── minimum-survival-stack.md
-│   ├── symbolic-breakthrough.md
-│   └── workflows.md
-├── docs/
-│   ├── platforms.md
-│   ├── README.codex.md
-│   ├── README.opencode.md
-│   ├── priority-ladder.md
-│   ├── dependency-failure-playbook.md
-│   ├── minimum-survival-checklist.md
-│   └── visible-win-patterns.md
-├── hooks/
-│   ├── hooks.json
-│   ├── session-start
-│   ├── session-start.ps1
-│   └── run-hook.cmd
-├── skills/
-│   ├── arming-command/
-│   │   └── SKILL.md
-│   ├── command-core/
-│   │   └── SKILL.md
-│   ├── single-core-command/
-│   │   └── SKILL.md
-│   ├── self-reliance-stack/
-│   │   └── SKILL.md
-│   ├── crisis-mode-design/
-│   │   └── SKILL.md
-│   ├── instruction-decomposition/
-│   │   └── SKILL.md
-│   ├── high-frequency-review/
-│   │   └── SKILL.md
-│   ├── closed-loop-feedback/
-│   │   └── SKILL.md
-│   ├── resource-lockdown/
-│   │   └── SKILL.md
-│   ├── minimum-survival-stack/
-│   │   └── SKILL.md
-│   ├── symbolic-breakthrough/
-│   │   └── SKILL.md
-│   └── workflows/
-│       └── SKILL.md
-├── tests/
-│   ├── validate.sh
-│   └── validate.ps1
-├── .gitignore
-├── LICENSE
-├── package.json
-└── README.md
+├── README.md
+├── commands/                 # 手动触发入口
+├── agents/                   # 子代理提示词
+├── hooks/                    # Session 注入脚本
+├── skills/                   # 会话入口、总控规则、场景 skill
+├── docs/                     # 平台说明与参考清单
+├── tests/                    # 安装验证
+├── .claude-plugin/
+├── .cursor-plugin/
+├── .codex/
+└── .opencode/
 ```
-
----
