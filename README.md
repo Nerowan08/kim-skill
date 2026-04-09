@@ -166,9 +166,8 @@
 ### 方式 A：作为通用 Markdown skill 使用
 
 ```bash
-git clone <your-repo-url>/kim-command-skill
-cd kim-command-skill
-```
+git clone https://github.com/Nerowan08/kim-skill.git
+cd kim-skill
 
 把下面这些路径接入你的 agent 环境：
 
