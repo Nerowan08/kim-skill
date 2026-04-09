@@ -1,5 +1,5 @@
 {
-  "name": "kim-command-skill",
+  "name": "kim-skill",
   "version": "0.1.0",
   "private": true,
   "description": "High-concentration execution skill scaffold for AI workflows.",
