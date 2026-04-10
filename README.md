@@ -158,41 +158,91 @@ powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File tests/validate.ps1
 
 ```text
 kim-skill/
-├── README.md                     # 项目总说明：理念、装载路径、安装方式、技能注册表
-├── LICENSE                       # MIT 许可证
-├── package.json                  # 项目元信息与验证脚本入口
-├── image.png                     # README 展示用图片
-│
-├── skills/                       # 核心 skill 集合：入口、总控、场景 skill、编排层
-│   ├── arming-command/
-│   │   └── SKILL.md              # 会话入口：先判断是否进入强执行模式，再路由到最少必要 skill
-│   ├── command-core/
-│   │   └── SKILL.md              # 总控规则：定义默认动作、输出结构和执行原则
+├── README.md
+├── LICENSE
+├── package.json
+├── .gitignore
+├── .claude-plugin/
+│   └── plugin.json
+├── .cursor-plugin/
+│   └── plugin.json
+├── .codex/
+│   └── INSTALL.md
+├── .opencode/
+│   └── INSTALL.md
+├── .github/
 │   └── workflows/
-│       └── SKILL.md              # 多 skill 编排层：定义组合顺序与字段传递规范
-│
-├── commands/                     # 手动触发入口：适合在会话中按场景调用
-│   └── workflows.md              # 触发 workflows 编排层的命令说明
-│
-├── agents/                       # 子代理提示词：把某类职责拆给独立角色
-│   ├── war-room-director.md      # 主任务指挥官：负责收束目标、排序动作、定义阶段战果
-│   └── inspection-officer.md     # 检阅官：负责发现偏航、输出纠偏动作与下一轮检阅点
-│
-├── hooks/                        # 会话注入脚本：在 session 开始时自动注入入口 skill
-│   ├── hooks.json                # hook 配置清单
-│   ├── session-start             # POSIX 启动脚本：输出 skills/arming-command/SKILL.md
-│   ├── session-start.ps1         # PowerShell 启动脚本：Windows 版本注入入口
-│   └── run-hook.cmd              # Windows 命令包装器
-│
-├── docs/                         # 文档与平台说明
-│   ├── platforms.md              # 平台支持与安装检查说明
-│   ├── README.codex.md           # Codex 使用说明
-│   └── README.opencode.md        # OpenCode 使用说明
-│
-├── tests/                        # 安装与结构自检
-│   ├── validate.sh               # POSIX 验证脚本
-│   └── validate.ps1              # PowerShell 验证脚本
-│
-└── assets/                       # 资源文件目录：用于放置补充素材、截图或后续扩展资源
-
+│       └── pages.yml
+├── skills/
+│   ├── arming-command/
+│   │   └── SKILL.md
+│   ├── command-core/
+│   │   └── SKILL.md
+│   ├── single-core-command/
+│   │   └── SKILL.md
+│   ├── self-reliance-stack/
+│   │   └── SKILL.md
+│   ├── crisis-mode-design/
+│   │   └── SKILL.md
+│   ├── instruction-decomposition/
+│   │   └── SKILL.md
+│   ├── high-frequency-review/
+│   │   └── SKILL.md
+│   ├── closed-loop-feedback/
+│   │   └── SKILL.md
+│   ├── resource-lockdown/
+│   │   └── SKILL.md
+│   ├── minimum-survival-stack/
+│   │   └── SKILL.md
+│   ├── symbolic-breakthrough/
+│   │   └── SKILL.md
+│   └── workflows/
+│       └── SKILL.md
+├── commands/
+│   ├── single-core-command.md
+│   ├── self-reliance-stack.md
+│   ├── crisis-mode-design.md
+│   ├── instruction-decomposition.md
+│   ├── high-frequency-review.md
+│   ├── closed-loop-feedback.md
+│   ├── resource-lockdown.md
+│   ├── minimum-survival-stack.md
+│   ├── symbolic-breakthrough.md
+│   └── workflows.md
+├── agents/
+│   ├── war-room-director.md
+│   ├── inspection-officer.md
+│   └── self-reliance-builder.md
+├── hooks/
+│   ├── hooks.json
+│   ├── session-start
+│   ├── session-start.ps1
+│   └── run-hook.cmd
+├── docs/
+│   ├── platforms.md
+│   ├── github-pages.md
+│   ├── README.codex.md
+│   ├── README.opencode.md
+│   ├── priority-ladder.md
+│   ├── dependency-failure-playbook.md
+│   ├── minimum-survival-checklist.md
+│   └── visible-win-patterns.md
+├── site/
+│   ├── index.html
+│   ├── 404.html
+│   ├── .nojekyll
+│   ├── robots.txt
+│   ├── assets/
+│   │   └── site.css
+│   ├── guide/
+│   │   └── index.html
+│   ├── skills/
+│   │   └── index.html
+│   └── examples/
+│       └── index.html
+├── assets/
+│   └── skill-map.md
+└── tests/
+    ├── validate.sh
+    └── validate.ps1
 ```
