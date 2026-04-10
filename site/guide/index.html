@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>使用指南 · Kim Command Skill</title>
+  <meta name="description" content="Kim Command Skill 的安装方式、加载顺序和建议工作流。">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../">Kim Command Skill</a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="../guide/">指南</a>
+        <a href="../skills/">技能页</a>
+        <a href="../examples/">示例</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="kicker">Guide</span>
+        <h1>怎么装、怎么用、什么时候切进强执行模式</h1>
+        <p class="lead">最重要的不是“全量加载”，而是先判断当前任务需不需要进入 command mode，再按现场信号只装最少必要的 skill。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>推荐装载顺序</h2>
+        <div class="grid">
+          <article class="card span-12">
+            <ol>
+              <li>会话开始先装 <code>skills/arming-command/SKILL.md</code></li>
+              <li>复杂任务再补 <code>skills/command-core/SKILL.md</code></li>
+              <li>根据现场信号，最多再选 1 到 2 个场景 skill</li>
+              <li>需要人工触发时再调用 <code>commands/*.md</code></li>
+              <li>需要子代理时再使用 <code>agents/*.md</code></li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>5 项快速判断</h2>
+        <div class="grid">
+          <article class="card span-6">
+            <h3>进入 command mode 的信号</h3>
+            <ul class="clean">
+              <li>存在紧迫交付截止</li>
+              <li>有一个结果明显高于其他结果</li>
+              <li>外部依赖可能掉线或迟到</li>
+              <li>反馈已多到足以扰乱方向</li>
+              <li>当前更需要落地推进，而不是继续发散</li>
+            </ul>
+          </article>
+          <article class="card span-6">
+            <h3>退出 command mode 的信号</h3>
+            <ul class="clean">
+              <li>任务已不再紧迫</li>
+              <li>依赖稳定且资源充足</li>
+              <li>反馈已经统一</li>
+              <li>当前阶段更适合探索和发散</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>安装</h2>
+        <pre><code>git clone https://github.com/YOUR_GITHUB_USERNAME/kim-command-skill
+cd kim-command-skill
+bash tests/validate.sh</code></pre>
+        <p>Windows：</p>
+        <pre><code>powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File tests/validate.ps1</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Pages 站点发布</h2>
+        <p class="section-lead">仓库已经内置了 <code>.github/workflows/pages.yml</code> 和 <code>site/</code>。推到 GitHub 之后，在仓库设置里把 Pages 的构建源切到 GitHub Actions 即可。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><a href="../">返回首页</a></p>
+    </div>
+  </footer>
+</body>
+</html>

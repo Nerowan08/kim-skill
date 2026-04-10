@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>技能总览 · Kim Command Skill</title>
+  <meta name="description" content="Kim Command Skill 的技能目录与触发信号。">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../">Kim Command Skill</a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="../guide/">指南</a>
+        <a href="../skills/">技能页</a>
+        <a href="../examples/">示例</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="kicker">Skill registry</span>
+        <h1>何时装哪一个 skill</h1>
+        <p class="lead">不要一次性把所有内容塞进 prompt。先判断现场问题，再只调用最少必要的 skill。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>现场信号</th>
+                <th>推荐 skill</th>
+                <th>作用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>目标很多，口径冲突</td>
+                <td><code>single-core-command</code></td>
+                <td>收束成唯一主任务</td>
+              </tr>
+              <tr>
+                <td>依赖可能失效</td>
+                <td><code>self-reliance-stack</code></td>
+                <td>建立替代方案与降级路径</td>
+              </tr>
+              <tr>
+                <td>时间极紧</td>
+                <td><code>crisis-mode-design</code></td>
+                <td>用坏条件反推最短打法</td>
+              </tr>
+              <tr>
+                <td>需求很大，但没有下一步</td>
+                <td><code>instruction-decomposition</code></td>
+                <td>把讨论改写成命令链</td>
+              </tr>
+              <tr>
+                <td>项目越做越偏</td>
+                <td><code>high-frequency-review</code></td>
+                <td>建立短周期检阅点</td>
+              </tr>
+              <tr>
+                <td>反馈过多，方向摇摆</td>
+                <td><code>closed-loop-feedback</code></td>
+                <td>过滤噪音，只接收有效反馈</td>
+              </tr>
+              <tr>
+                <td>资源争抢严重</td>
+                <td><code>resource-lockdown</code></td>
+                <td>把资源锁给主线任务</td>
+              </tr>
+              <tr>
+                <td>从零启动</td>
+                <td><code>minimum-survival-stack</code></td>
+                <td>先跑通最小交付链</td>
+              </tr>
+              <tr>
+                <td>需要先向外界证明进展</td>
+                <td><code>symbolic-breakthrough</code></td>
+                <td>优先打出可见战果</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><a href="../">返回首页</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>示例 · Kim Command Skill</title>
+  <meta name="description" content="Kim Command Skill 的场景化使用示例。">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../">Kim Command Skill</a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="../guide/">指南</a>
+        <a href="../skills/">技能页</a>
+        <a href="../examples/">示例</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="kicker">Examples</span>
+        <h1>三种最常见的使用场景</h1>
+        <p class="lead">示例的重点不是措辞，而是结构：先定义最高任务，再留下证据和下一检阅点。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid">
+          <article class="card span-12">
+            <h2>场景一：今晚必须交一版 demo</h2>
+            <p><strong>推荐 workflow：</strong> <code>single-core-command -> resource-lockdown -> instruction-decomposition -> high-frequency-review</code></p>
+            <pre><code>[最高任务]
+今晚 21:00 前交出一版可演示的 demo 页面。
+
+[当前态势]
+需求很多，但可用时间只剩 6 小时；设计稿未定稿；后端接口不完整。
+
+[命令链]
+1. 冻结非演示必需功能，只保留首页和关键流程。
+2. 用静态假数据代替未完成接口。
+3. 先做可点击演示，再补视觉细节。
+4. 每 90 分钟检阅一次是否仍围绕 demo 主线。
+
+[本轮证据]
+一份可点击演示链接或录屏。
+
+[风险与降级]
+如果接口继续不可用，全部切到本地 mock 数据。
+
+[下一检阅点]
+检查演示路径是否完整跑通。</code></pre>
+          </article>
+
+          <article class="card span-12">
+            <h2>场景二：关键依赖突然失效</h2>
+            <p><strong>推荐 workflow：</strong> <code>self-reliance-stack -> minimum-survival-stack -> crisis-mode-design</code></p>
+            <pre><code>[最高任务]
+在外部服务失效的情况下，今天仍然交出可用版本。
+
+[当前态势]
+主接口掉线；第三方数据源不可访问；截止时间不变。
+
+[命令链]
+1. 列出所有依赖项，区分必须依赖和可替代依赖。
+2. 把必须依赖改成手工导入、本地缓存或 mock。
+3. 先跑通最小交付链路，再决定是否恢复增强功能。
+
+[本轮证据]
+一版不依赖外部服务的降级可运行结果。
+
+[风险与降级]
+若真实数据持续缺失，则交付样例数据版并明确标注。
+
+[下一检阅点]
+检查最小交付链是否在本地独立跑通。</code></pre>
+          </article>
+
+          <article class="card span-12">
+            <h2>场景三：从零开始，但必须先证明项目值得继续</h2>
+            <p><strong>推荐 workflow：</strong> <code>minimum-survival-stack -> symbolic-breakthrough -> high-frequency-review</code></p>
+            <pre><code>[最高任务]
+48 小时内做出一个足以争取资源的第一版成果。
+
+[当前态势]
+没有现成系统；范围还在变化；只能先抢一个可见突破点。
+
+[命令链]
+1. 只选一个最能代表价值的核心动作。
+2. 把完整系统拆成最小演示链路。
+3. 优先完成可展示成果，再记录后续扩展项。
+
+[本轮证据]
+一份截图、视频、原型或摘要，能向外说明项目已经成立。
+
+[风险与降级]
+如果完整交互来不及，先交可读原型或录屏版。
+
+[下一检阅点]
+检查这份成果是否足以支撑下一轮争取资源。</code></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><a href="../">返回首页</a></p>
+    </div>
+  </footer>
+</body>
+</html>

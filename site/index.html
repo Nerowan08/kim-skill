@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kim Command Skill</title>
+  <meta name="description" content="把唯一主任务、内生保供、可见战果和高频检阅写成一套可装载的 AI 执行协议。">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./">Kim Command Skill</a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="guide/">指南</a>
+        <a href="skills/">技能页</a>
+        <a href="examples/">示例</a>
+        <a href="https://github.com/YOUR_GITHUB_USERNAME/kim-command-skill">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="kicker">AI execution doctrine</span>
+        <h1>让 AI 在高压和坏条件下，
+          仍然稳定推进交付</h1>
+        <p class="lead">Kim Command Skill 不是为“多想一点”设计的，而是为“别失手、别偏航、别停下来”设计的。它把复杂任务收束成唯一主任务，再通过命令链、降级路径、阶段战果和高频检阅，把推进动作固化下来。</p>
+        <div class="badge-row" aria-label="标签">
+          <span class="badge">唯一主任务</span>
+          <span class="badge">依赖失效可降级</span>
+          <span class="badge">每轮留证</span>
+          <span class="badge">反馈闭环</span>
+        </div>
+        <div class="cta-row">
+          <a class="button primary" href="guide/">先看使用指南</a>
+          <a class="button" href="skills/">浏览技能目录</a>
+          <a class="button" href="examples/">看场景示例</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>这套 skill 在干什么</h2>
+        <p class="section-lead">它把极端约束下的集中执行方法，翻译成 AI 能直接采用的会话协议。重点不是风格，而是执行结果。</p>
+        <div class="grid">
+          <article class="card span-4">
+            <h3>收束目标</h3>
+            <p>先写出本轮唯一不能失败的结果。没有最高任务，就不进入复杂执行。</p>
+          </article>
+          <article class="card span-4">
+            <h3>改写命令</h3>
+            <p>把模糊要求翻成动作链，明确先后顺序、完成标准和交付证据。</p>
+          </article>
+          <article class="card span-4">
+            <h3>保留推进能力</h3>
+            <p>默认条件不会齐全，优先建立可替代、可降级、可独立完成的路径。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>适合的任务现场</h2>
+        <div class="grid">
+          <article class="card span-6">
+            <h3>适合</h3>
+            <ul class="clean">
+              <li>deadline 很近，必须先把主结果交出来</li>
+              <li>依赖容易失效，不能一直等外部条件齐全</li>
+              <li>需求和反馈很多，需要统一口径</li>
+              <li>要先做出 demo、样品、摘要、简报这种可见成果</li>
+            </ul>
+          </article>
+          <article class="card span-6">
+            <h3>不适合</h3>
+            <ul class="clean">
+              <li>没有明确目标的开放脑暴</li>
+              <li>纯文学、纯情绪、纯风格型创作</li>
+              <li>仍在前期探索，暂时不该过早收束</li>
+              <li>只想多列方案，不想决定优先级</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>最常用的 4 个动作</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>动作</th>
+                <th>作用</th>
+                <th>对应 skill</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>确定唯一主任务</td>
+                <td>防止目标同时争抢注意力</td>
+                <td><code>single-core-command</code></td>
+              </tr>
+              <tr>
+                <td>建立降级路径</td>
+                <td>外部依赖失效时仍能推进</td>
+                <td><code>self-reliance-stack</code></td>
+              </tr>
+              <tr>
+                <td>把讨论改写成命令链</td>
+                <td>避免只有建议没有动作</td>
+                <td><code>instruction-decomposition</code></td>
+              </tr>
+              <tr>
+                <td>设置检阅节点</td>
+                <td>在中途纠偏，不等最后翻车</td>
+                <td><code>high-frequency-review</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>默认输出协议</h2>
+        <p class="section-lead">复杂任务进入 command mode 之后，回答建议使用下面这个骨架。</p>
+        <pre><code>[最高任务]
+一句话写出本轮唯一不能失败的结果
+
+[当前态势]
+真正影响推进的阻塞、依赖、风险和时间压力
+
+[命令链]
+1. 先做什么
+2. 再做什么
+3. 做到什么程度算完成
+
+[本轮证据]
+这轮必须交出的成果物
+
+[风险与降级]
+关键条件失效时怎么继续交付
+
+[下一检阅点]
+下轮重点检查什么</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="note">这个项目借用了“金式指挥”的风格名称，但不移植现实政治立场。真正可复用的是集中执行的方法，而不是宣传性叙述。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Repo：<a href="https://github.com/YOUR_GITHUB_USERNAME/kim-command-skill">github.com/YOUR_GITHUB_USERNAME/kim-command-skill</a></p>
+      <p>Pages：<code>https://YOUR_GITHUB_USERNAME.github.io/kim-command-skill/</code></p>
+    </div>
+  </footer>
+</body>
+</html>
