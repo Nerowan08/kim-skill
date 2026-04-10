@@ -4,6 +4,12 @@
 
 <h1 align="center">🇰🇵金正恩Skill</h1>
 
+<p align="center">
+  <a href="https://nerowan08.github.io/kim-skill/" target="_blank">
+    <img src="https://img.shields.io/badge/查看项目介绍-点击进入-blue?style=for-the-badge" alt="查看项目介绍" />
+  </a>
+</p>
+
 ## 🌟 为什么做这个？
 
 很多 AI 会分析，但不会在高压力、低资源、多干扰环境下稳定推进任务：
